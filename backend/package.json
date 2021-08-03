@@ -24,12 +24,9 @@
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "joi": "^17.4.2",
-<<<<<<< HEAD
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.5"
-=======
+    "mongoose": "^5.13.5",
     "multer": "^1.4.2"
->>>>>>> 82f4e7b4fa189c5abca8018ed284553a94286776
   },
   "devDependencies": {
     "nodemon": "^2.0.12"

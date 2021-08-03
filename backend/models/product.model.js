@@ -8,4 +8,4 @@ const productSchema = new schema({
     image: { type: String, required: true },
 },{timestamps: true});
 
-export default mongoose.model('product', productSchema, 'products')
+export default mongoose.model('Product', productSchema, 'products')

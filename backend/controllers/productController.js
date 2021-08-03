@@ -1,6 +1,9 @@
-import { product } from '../models';
+import { Product } from '../models';
 import multer from 'multer';
 import path from 'path';
+import CustomErrorHandler from '../services/customErrorHandler';
+import Joi from 'joi';
+import fs from 'fs';
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, 'uploads/'),
@@ -14,10 +17,42 @@ const handleMultipartData = multer({storage, limits: { fileSize: 1000000*5}}).si
 
 const productController = {
     async store(req, res, next) {
-        handleMultipartData(req, res, (err) => {
+        handleMultipartData(req, res, async (err) => {
             if (err){
-                return next(Cus)
+                return next(CustomErrorHandler.serverError(err.message))
             }
+
+            const filepath = req.file.path;
+
+            const productSchema = Joi.object({
+                name: Joi.string().required(),
+                price: Joi.number().required(),
+                size: Joi.string().required(),
+            });
+
+            const { error } = productSchema.validate(req.body);
+            if (error){
+                fs.unlink(`${appRoot}/${filepath}`, (err) => {
+                    return next(CustomErrorHandler.serverError(err.message));
+                });
+
+                return next(error);
+            }
+            
+            const { name, price, size } = req.body;
+            let document;
+            try{
+                document = await Product.create({
+                    name,
+                    price,
+                    size,
+                    image: filepath,
+                })
+            } catch(err){
+                return next(err);
+            }
+
+            res.status(201).json(document);
         })
     }
 }
