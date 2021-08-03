@@ -1,0 +1,1 @@
+In create product API, we may get image as data so in place of using `json` we used `multipart form data`
