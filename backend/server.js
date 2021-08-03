@@ -21,6 +21,7 @@ db.once('open', () => {
 
 app.use(express.json());
 app.use('/api', routes);
+app.use('/uploads', express.static('uploads'));
 
 
 
