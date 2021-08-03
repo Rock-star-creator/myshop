@@ -54,7 +54,7 @@ const registerController = {
     } catch(err) {
         return next(err);
     }
-
+    
         res.json({ access_token, refresh_token });
         
 
