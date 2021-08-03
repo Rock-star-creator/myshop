@@ -10,7 +10,9 @@ import routes from './routes';
 
 
 app.use('/api', routes);
-
+app.get('/', (req,res) => {
+    res.send("works fine");
+})
 
 
 
