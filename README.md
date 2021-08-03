@@ -5,6 +5,7 @@ It will work as a real ecommerce platform where you can sell and buy a product.
 ## Documentation
 
 - [Backend Setup](https://github.com/Rock-star-creator/myshop/tree/main/backend/documents/setup.md)
+- [Package Information](https://github.com/Rock-star-creator/myshop/tree/main/backend/documents/package_info.md)
 - [API Document](https://github.com/Rock-star-creator/myshop/tree/main/backend/documents/API_Doc.md)
 
 
