@@ -1,0 +1,30 @@
+{
+  "name": "myshop",
+  "version": "1.0.0",
+  "description": "It will work as a real ecommerce platform where you can sell and buy a product.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -r esm server.js",
+    "start": "node -r esm server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rock-star-creator/myshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rock-star-creator/myshop/issues"
+  },
+  "homepage": "https://github.com/Rock-star-creator/myshop#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "joi": "^17.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
