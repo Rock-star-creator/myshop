@@ -1,4 +1,4 @@
-# Requirements
+# Setup
 
 ## Node installation on windows
 
