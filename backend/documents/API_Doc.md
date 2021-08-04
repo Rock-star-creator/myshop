@@ -1,3 +1,27 @@
+### Register user
+
+```http
+  POST /api/register
+```
+
+| Parameter       | Type     | Description                        |
+| :--------       | :------- | :-------------------------------   |      
+| `name`          | `string` | **Required**. provide user name    |
+| `email`         | `string` | **Required**. provide user email   |
+| `password`      | `string` | **Required**. provide user password|
+| `repeat_passwod`| `string` | **Required**. same to password     |  
+
+### login user
+
+```http
+  POST /api/register
+```
+
+| Parameter       | Type     | Description                                  |
+| :--------       | :------- | :-------------------------------             |      
+| `email`         | `string` | **Required**. provide  register user email   |
+| `password`      | `string` | **Required**. provide  register user password|
+
 
 #### Get all items
 

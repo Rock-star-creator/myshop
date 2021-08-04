@@ -5,7 +5,7 @@ const app = express();
 import routes from './routes';
 import mongoose from 'mongoose';
 // import path from 'path';
-// import cors from 'cors';
+import cors from 'cors';
 
 mongoose.connect(DB_URL, {
     useNewUrlParser: true,

@@ -35,10 +35,11 @@ const loginController = {
         // database whitelist
             await RefreshToken.create({ token: refresh_token });
             res.json({ access_token, refresh_token });
-
+            
         } catch(err) {
             return next(err);
         }
+    
 
     },
     async logout(req, res, next) {
