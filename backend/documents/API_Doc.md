@@ -47,7 +47,7 @@ Autherizatioin Type: Bearer
 #### Update Product
 
 ```http
-  PUT /api/products/:id
+  PUT /api/products/${id}
 ```
 
 Body Type: Form
