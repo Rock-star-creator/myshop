@@ -1,4 +1,6 @@
-### Register user
+# API documet
+
+#### Register user
 
 ```http
   POST /api/register
@@ -11,10 +13,10 @@
 | `password`      | `string` | **Required**. provide user password|
 | `repeat_passwod`| `string` | **Required**. same to password     |  
 
-### login user
+#### login user
 
 ```http
-  POST /api/register
+  POST /api/login
 ```
 
 | Parameter       | Type     | Description                                  |
@@ -23,26 +25,71 @@
 | `password`      | `string` | **Required**. provide  register user password|
 
 
+
+#### Add Product
+
+```http
+  POST /api/products
+```
+
+Body Type: Form
+
+| Parameter | Type     | Description                      |
+| :-------- | :------- | :------------------------------- |
+| `name` | `string` | **Required**. Name of the product   |
+| `price` | `string` | **Required**. Price of the product |
+| `size` | `string` | **Required**. Size of the product   |
+| `image` | `file` | **Required**. image of the product   |
+
+Autherizatioin Type: Bearer
+
+
+#### Update Product
+
+```http
+  PUT /api/products/:id
+```
+
+Body Type: Form
+
+| Query Parameter | Type     | Description                     |
+| :-------------- | :------- | :------------------------------ |
+| `id`            | `string` | **Required**. id of the product |
+
+| Parameter | Type     | Description                        |
+| :-------- | :------- | :--------------------------------- |
+| `name`    | `string` | **Required**. Name of the product  |
+| `price`   | `string` | **Required**. Price of the product |
+| `size`    | `string` | **Required**. Size of the product  |
+| `image`   | `file`   |  image of the product              |
+
+Autherizatioin Type: Bearer
+User Type: admin
+
+#### Delete Product
+
+```http
+  DELETE /api/products/${id}
+```
+
+| Query Parameter | Type     | Description                     |
+| :-------------- | :------- | :------------------------------ |
+| `id`            | `string` | **Required**. id of the product |
+
+Autherizatioin Type: Bearer
+
 #### Get all items
 
 ```http
-  GET /api/items
+  GET /api/products
 ```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
 
 #### Get item
 
 ```http
-  GET /api/items/${id}
+  GET /api/products/${id}
 ```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Id of item to fetch |
-
-#### add(num1, num2)
-
-Takes two numbers and returns the sum.
