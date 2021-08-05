@@ -16,6 +16,7 @@ const auth = async (req, res, next) => {
             role
         }
         req.user = user;
+
         next();
 
     } catch(err) {

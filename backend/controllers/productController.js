@@ -101,7 +101,7 @@ const productController = {
     async remove(req, res, next) {
         let documents;
         try{
-            documents = await Product.findOneAndDelete({_id: req.params.id});
+            documents = await Product.findOneAndRemove({_id: req.params.id});
         } catch(err){
             return next(CustomErrorHandler.serverError(err.message));
         }
